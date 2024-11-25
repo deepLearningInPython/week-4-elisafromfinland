@@ -89,12 +89,12 @@ print(word_frequencies)
 # Your code here:
 # -----------------------------------------------
 def token_counts(string: str, k: int = 1) -> dict:
-    tokens_here = string.split()
+    to = tokenize(string)
     counts = {
-        token.lower(): tokens_here.count(token.lower()) + tokens_here.count(token.capitalize())
-        for token in tokens_here
-        if (tokens_here.count(token.lower()) + tokens_here.count(token.capitalize())) > k
-    }
+            token: tokens.count(token)
+            for token in set(tokens)  # Iterate over unique tokens
+            if tokens.count(token) > k  # Only include tokens with count > k
+        }
     return counts
 
 # test:
