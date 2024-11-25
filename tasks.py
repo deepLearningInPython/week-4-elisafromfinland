@@ -93,7 +93,7 @@ def token_counts(string: str, k: int = 1) -> dict:
     counts = {
             token: tokens.count(token)
             for token in set(tokens)  # Iterate over unique tokens
-            if tokens.count(token) > k  # Only include tokens with count > k
+            if tokens.count(token) >= k  # Only include tokens with count > k
         }
     return counts
 
