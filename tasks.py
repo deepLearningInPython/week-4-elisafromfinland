@@ -89,7 +89,7 @@ print(word_frequencies)
 # Your code here:
 # -----------------------------------------------
 def token_counts(string: str, k: int = 1) -> dict:
-    to = tokenize(string)
+    tokens = tokenize(string)
     counts = {
             token: tokens.count(token)
             for token in set(tokens)  # Iterate over unique tokens
